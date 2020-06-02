@@ -1,0 +1,42 @@
+﻿<div class="about-page-container">
+    <div class="row">
+        <div class="col">
+            <h1 class="my-about-title">About This Project</h1>
+            <p class="h3 my-about-desc">Technologies Used:</p>
+            <p class="h4 my-about-desc">
+                Azure Cloud Web Application<br />
+                ASP.Net Core MVC with C#<br />
+                HTML, CSS, JavaScript and Bootstrap
+            </p>
+        </div>
+    </div>
+
+    <div class="row" id="about">
+        <div class="col-xs-12 col-md-11 col-lg-9 text-justify">
+            <h3>Key Points</h3>
+            <p>
+                <strong>Back End</strong><br />
+                <ul>
+                    <li>
+                        This simplified version of the game of BlackJack, was created in Visual Studio, using object-oriented programming.
+                        The complete code is available on GitHub. Some of the classes include: Game, Dealer, Player, Deck, Hand and Card.
+                    </li>
+                    <li>Using meaningful variable names and comments have made the code readable and maintainable.</li>
+                    <li>
+                        An instance variable is used to keep the current GameStatus at any point in time, and this will help with validating all user actions.
+                        For example, while the GameStatus is PLACE_BET, the user cannot visit the Game page to peek at the cards, and once the GameStatus become ONGOING, the user cannot change the placed bet.
+                        To avoid undesired user actions, the front end will hide any un-necessary controls from the user, and at the same time, the back end will ignore any such incoming requests, nonetheless.
+                    </li>
+                    <li>A ViewModel is used to send important data to the front end.</li>
+                </ul>
+            </p><p>
+                <strong>Front End</strong><br />
+                <ul>
+                    <li>The front end was created using ASP.Net Razor pages, includes valid HTML and is fully responsive. SEO best practices are also respected.</li>
+                    <li>CSS animations are used to animate the cards, have them stack on top of each other and cast a shadow.</li>
+                    <li>The hand value is calculated and displayed for the player and dealer to avoid any mistakes, and if the game is in development mode, more information about the status of the game (including the value of the dealer's hidden card) would be displayed at the bottom of the page.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="index-page-container">
+        <div class="row">
+            <div class="col">
+                <h1 class="my-index-title">Welcome to BlackJack!</h1>
+
+                <h3 class="my-index-desc">Start a New Game</h3>
+
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        <input type="hidden" name="start" id="start" value="true" />
+                        <input type="submit" value="Start" class="btn btn-warning btn-lg my-wide-button" />
+                    </div>
+                }
+                <div class="">Online Players: @ViewBag.OnlinePlayersCount</div>
+
+            </div>
+        </div>
+        <div class="row" id="instructions">
+            <div class="col-xs-12 col-md-11 col-lg-9 text-justify">
+                <h3>Instructions</h3>
+                <p>
+                    The player competes against the dealer. The objective of the game is to have a higher point total than the dealer without going over 21.
+                    Each ace counts as either 1 point or 11 points, face cards (kings, queens, jacks) count 10 points each, and all other cards (2 through 9) count their face value.
+                </p><p>
+                    <strong>Game Play</strong><br />
+                    At the beginning of each game the cards are shuffled. At the beginning of each hand, the dealer deals two cards to the player and two cards to himself. The player's cards are dealt face up, while one of the dealer's cards is dealt face up and the other is face down. After the deal, the dealer asks the player whether they want an additional card. The player may "Stand" -- play just the two cards originally dealt or may "Hit"-- take another card. After being dealt an additional card, the player may stop or may take still another card. A player may take as many cards as they want, but as soon as the player's total equals or exceeds 21, the game is over. If the players total exceeds 21 then the player loses -- regardless of what the dealer has. If the players hand equals 21, then the player has won (unless the dealers total is also 21). After the player stands, the dealer's remaining card is exposed. The dealer must then hit or stand according to these rules: 1. The dealer must count an ace as 11 points, unless this causes the dealer to bust. Then the dealer must count the ace as 1 point. 2. If the dealer has a total of 17 points or more, he must stand. 3. If the dealer has a total of less than 17 points, he must hit. If the dealer "busts" by going over 21, the player wins. In case of a tie (known as a push), the player's bet is returned (no money changes hands). If a player's or the dealer's first two cards total 21 (an ace and a 10 or face card), the holding is known as a blackjack. A player with blackjack is paid extra -- one-and-a-half times the original bet -- unless the dealer also has blackjack, in which case the player loses. The player may leave the game between any hands. This version of blackjack will not implement rules for doubling down, splitting, or insurance.
+                </p>
+            </div>
+        </div>
+    </div>

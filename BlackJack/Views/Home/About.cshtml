@@ -19,7 +19,7 @@
                 <ul>
                     <li>
                         This simplified version of the game of BlackJack, was created in Visual Studio, using object-oriented programming.
-                        The complete code is available on GitHub. Some of the classes include: Game, Dealer, Player, Deck, Hand and Card.
+                        The complete code is available on <a href="https://github.com/AminAmani83/CSharp-BlackJack" class="my-link" target="_blank">GitHub</a>. Some of the classes include: Game, Dealer, Player, Deck, Hand and Card.
                     </li>
                     <li>Using meaningful variable names and comments have made the code readable and maintainable.</li>
                     <li>
@@ -27,7 +27,7 @@
                         For example, while the GameStatus is PLACE_BET, the user cannot visit the Game page to peek at the cards, and once the GameStatus become ONGOING, the user cannot change the placed bet.
                         To avoid undesired user actions, the front end will hide any un-necessary controls from the user, and at the same time, the back end will ignore any such incoming requests, nonetheless.
                     </li>
-                    <li>A ViewModel is used to send important data to the front end.</li>
+                    <li>The game can be used by multiple players simultaneously. This is achieved by using session variables, creating multiple game objects and assigning a game ID to each instance of the game. These "game sessions" will expire after 30 minutes of inactivity.</li>
                 </ul>
             </p><p>
                 <strong>Front End</strong><br />

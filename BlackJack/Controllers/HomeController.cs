@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BlackJack.Models;
 using BlackJack.ViewModels;
@@ -25,7 +24,7 @@ namespace BlackJack.Controllers
         {
             if (start == "true")
             {
-                Guid gameId = Guid.NewGuid();
+                Guid gameId = Guid.NewGuid(); // a unique id that is assigned to each game and to the user's session variable
                 games.Add(new Game(gameId));
                 HttpContext.Session.SetString("gameId", gameId.ToString());
                 RemoveAbandonedGames();
@@ -171,6 +170,10 @@ namespace BlackJack.Controllers
             }
         }
 
+        /// <summary>
+        /// Check the gameId of the current user, and find the game object with the same gameID from the list of games.
+        /// </summary>
+        /// <returns></returns>
         private Game GetGameFromSession()
         {
             Guid gameId;
@@ -186,9 +189,12 @@ namespace BlackJack.Controllers
             }
         }
 
+        /// <summary>
+        /// Any game that was last started more than 30 minutes ago, is considered as "expired" and is removed.
+        /// </summary>
         private static void RemoveAbandonedGames()
         {
-            games.RemoveAll(g => DateTime.Now.Subtract(g.GameStartTime).TotalMinutes > 1);
+            games.RemoveAll(g => DateTime.Now.Subtract(g.GameStartTime).TotalMinutes > 30);
         }
 
     }
